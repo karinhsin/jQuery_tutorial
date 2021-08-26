@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq</title>
+</head>
+<body>
+    <h1 class="title">Hello World</h1>
+
+    <a href="https://google.com">google</a>
+    <a href="https://tw.yahoo.com/">yahoo</a>
+
+    <!-- href是屬性 -->
+
+    <!-- 載入jquery -->
+    <!-- 方法一 下載至本地端後讀入
+    <script src="./jquery-3.6.0.js"></script> -->
+    <!-- 方法二 直接使用 CDN 方式讀入如下  -->
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <script>
+      $('h1').css('color','red');  //一個選擇器＋一個動作
+
+      document.querySelector('.title');
+        $("a[href='https://www.yahoo.com/']").css('color','yellow');
+  $("a[href='https://www.google.com/']").css('color','red');
+  </script>
+</body>
+</html>
