@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>has</title>
+</head>
+<body>
+  <div>abc</div>
+  <div>
+    <p>def</p>
+  </div>
+
+  <script src="./jquery-3.6.0.js"></script>
+  <script>
+    $("div:has(p)").css("background", "yellow");
+    // has()- 包含 xx 元素
+    //哪一個div有p元素 把那個div的背景改成黃色（不是選到ｐ 是選到有p的div)
+  
+  </script>
+</body>
+</html>
