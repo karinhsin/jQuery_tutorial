@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw4</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+    <form>
+    <div class="form-group">
+    <label for="exampleInputEmail1">username</label>
+    <input type="text" class="form-control" id="Username" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="EmailAddress" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="Password" placeholder="Password">
+  </div>
+  <button type="button" class="btn btn-primary" onclick="AutoInput()">auto input</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<script src="./jquery-3.6.0.js"></script>
+<script>
+function AutoInput(){
+    $('#Username').val('John');
+    $('#EmailAddress').val('john@gmail.com');
+    $('#Password').val('000000');
+}
+</script>
+</body>
+</html>
