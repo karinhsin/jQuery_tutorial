@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw1</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <table class="table table-bordered">
+      <tbody>
+        <tr class="tr">
+          <th scope="row">
+            <div class="form-group form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+            </div>
+          </th>
+          <td>Elon Musk</td>
+          <td>0912345678</td>
+          <td>Elon@gmail.com</td>
+        </tr>
+        <tr class="tr">
+          <th scope="row">
+            <div class="form-group form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+            </div>
+          </th>
+          <td>Mark</td>
+          <td>0912345678</td>
+          <td>Mark@gmail.com</td>
+        </tr>
+        <tr class="tr">
+          <th scope="row">
+            <div class="form-group form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+            </div>
+          </th>
+          <td>Bill</td>
+          <td>0912345678</td>
+          <td>Bill@gmail.com</td>
+        </tr>
+        <tr class="tr">
+          <th scope="row">
+            <div class="form-group form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+            </div>
+          </th>
+          <td>Lary</td>
+          <td>0912345678</td>
+          <td>Lary@gmail.com</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+      $('input:checkbox').click(function(){
+        //console.log($(this).is(':checked'));
+        if($(this).is(':checked')==true){
+          $(this).parents('tr').css('background','blue')
+        }
+        else{
+          $(this).parents('tr').css('background','#fff')
+        }
+      });
+    </script>
+  </body>
+</html>
