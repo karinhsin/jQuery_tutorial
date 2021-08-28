@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form event</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "email" value = "" placeholder="請輸入email">
+    <!-- 重要：沒打name = "email" 自己就會收不到 -->
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+      $('form').submit(function(event){ //.submit()- 點了可以送出表單
+            event.preventDefault //preventDefault 阻止預設行為
+            //阻止表格送出的event
+            console.log('hi',event);
+      });
+
+      $(':text').focus(function () {
+            console.log('focus');
+        })
+      //.focus() 偵測某個 input 變成輸入狀態
+
+      $(':text').blur(function () {
+            console.log('blur');
+        })
+      //.blur()  偵測離開某個 input 輸入狀態
+
+      $(':text').change(function () {
+            console.log('changed');
+        })
+      //.change()- 偵測 input 或 select 變化
+
+    </script>
+</body>
+</html>
