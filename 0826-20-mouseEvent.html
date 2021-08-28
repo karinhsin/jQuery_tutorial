@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse event</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #afa;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        //點擊
+        $('.box').click(function(){
+            console.log('clicked');
+        })
+        //連點
+        $('.box').dblclick(function(){
+            console.log('dblclicked');
+        })
+        //右鍵
+        $('.box').contextmenu(function(){
+            console.log('contextmenu');
+        })
+        //滑鼠按下左鍵
+        $('.box').mousedown(function(){
+            console.log('mousedown');
+        })
+        //滑鼠放開左鍵
+        $('.box').mouseup(function(){
+            console.log('mouseup');
+        })
+        //滑鼠移進選擇器(滑過去就顯示)
+        $('.box').mouseenter(function(){
+            console.log('mouseenter');
+        })
+        //滑鼠離開(滑走顯示)
+        $('.box').mouseleave(function(){
+            console.log('mouseleave');
+        })
+        //移進與離開(就是hover)
+        $('.box').hover(function(){
+            console.log('hover');
+        })
+    </script>
+</body>
+</html>
