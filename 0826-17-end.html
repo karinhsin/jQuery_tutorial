@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>end</title>
+  </head>
+
+  <body>
+    <ul class="first">
+      <li class="a1">list item 1</li>
+      <li>list item 2</li>
+      <li class="a2">list item 3</li>
+    </ul>
+    <ul class="second">
+      <li class="b1">list item 1</li>
+      <li>list item 2</li>
+      <li class="b2">list item 3</li>
+    </ul>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+      $("ul.first")
+        .find(".a1")
+        .css("background-color", "red")
+        .end()
+        //先往下找a1 再回到上一個地方
+        //.end()- 回到上一個選取狀態 =回到ul.first
+        .next()
+        .find(".b2")
+        .css("background-color", "green");
+
+        //練習
+        $("ul.second")
+        .find(".b1")
+        .css("color","blue")
+        .end()
+        .css("background","gray");
+    </script>
+  </body>
+</html>
