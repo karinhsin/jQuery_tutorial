@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hidden</title>
+</head>
+<body>
+  <div hidden>abc</div>
+  <div>
+    <p>def</p>
+  </div>
+  
+  <script src="./jquery-3.6.0.js"></script>
+  <script>
+    $("div:hidden").show();//把所有隱藏的show出來 
+    $("div:visible").hide();//順序問題 把所有看得到的都hide掉 
+    //hidden- 選取隱藏的
+    //visible- 選取看得見的
+    //面試考題hidden.opacity(消失有哪幾種 其中哪些是使用者點得到的)
+  </script>
+</body>
+</html>
