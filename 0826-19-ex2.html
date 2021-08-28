@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習二</title>
+</head>
+<body>
+    <input type="text">
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+    <div class="box">box4</div>
+<script src="./jquery-3.6.0.js"></script>
+<script>
+    //let box = document.querySelector('.box');
+    $('.box').click(function(){
+        console.log($(this).text(),'say hi');
+
+        $(this).css('background','red');
+        //使用一個代名詞this，來當作被點擊的那個人
+        //誰觸發了這個function 這個this就是誰
+
+        console.log('input value:',$('#myInput1').val('0912345678'));
+    });
+</script>
+</body>
+</html>
