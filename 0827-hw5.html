@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw5</title>
+    <style>
+        body{
+            margin: 0;
+            height: 3000px;
+        }
+        .wrap{
+            width: 100%;
+            height: 50px;
+            background-color: #ccc;
+            position: fixed;
+            top: 0;
+        }
+        .box{
+            background-color: pink;
+            height: 50px;
+            width:100％;    
+            position: fixed;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        console.log('body height',$('body').height()); //拿body
+        
+        $(window).scroll(function(){
+            //console.log('scrollTop:',$(document).scrollTop());
+            //1.使用者滾動到哪(scrollTop) 數字是多少
+            //2.網頁內容全部長度
+
+            let scrollPercent = $(window).scrollTop() / ($(document).height() - $(window).height()) * 100;
+            //console.log(scrollPercent)
+            //3.計算出目前閱讀的百分比
+            //分子:目前位置
+            //分母:可以拉的範圍 （全部高度-螢幕畫面高度） 
+            $('.box').css('width', 100-  scrollPercent+'%');
+        })
+    </script>
+</body>
+</html>
