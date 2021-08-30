@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div id="add" class="btn btn-primary">Add</div>
+      </div>
+      <div class="row">
+        <p>清單</p>
+        <ul>
+          <li>item1</li>
+          <li>item2</li>
+          <!-- append這邊 -->
+        </ul>
+      </div>
+    </div>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+      $('#add').click(function () {
+        $('ul').append(`<li>item3</li>`);
+      });
+      //append 把原本不存在的東西塞進去
+      // $('li').click(function () {
+      // console.log('hi li'); //普通的綁定綁不到後來動態產生的li3
+      //  })
+
+      $('ul').on('click','li',function () {
+          //動態的綁定
+          //從li的父層開始找再監聽 前面先放父層 中間再放對象（找爸爸綁小孩）
+          console.log('hi li'); 
+          //selector 是動態產生時綁定事件
+      })
+    </script>
+  </body>
+</html>
