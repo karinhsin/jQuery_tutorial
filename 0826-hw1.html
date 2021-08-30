@@ -14,78 +14,68 @@
   </head>
 
   <body>
-    <table class="table table-bordered">
-      <tbody>
-        <tr class="tr">
-          <th scope="row">
-            <div class="form-group form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-            </div>
-          </th>
-          <td>Elon Musk</td>
-          <td>0912345678</td>
-          <td>Elon@gmail.com</td>
-        </tr>
-        <tr class="tr">
-          <th scope="row">
-            <div class="form-group form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-            </div>
-          </th>
-          <td>Mark</td>
-          <td>0912345678</td>
-          <td>Mark@gmail.com</td>
-        </tr>
-        <tr class="tr">
-          <th scope="row">
-            <div class="form-group form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-            </div>
-          </th>
-          <td>Bill</td>
-          <td>0912345678</td>
-          <td>Bill@gmail.com</td>
-        </tr>
-        <tr class="tr">
-          <th scope="row">
-            <div class="form-group form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-            </div>
-          </th>
-          <td>Lary</td>
-          <td>0912345678</td>
-          <td>Lary@gmail.com</td>
-        </tr>
-      </tbody>
-    </table>
-    
+    <div class="container">
+      <div class="row">
+        <table class="table table-bordered mt-5">
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>Elon Musk</td>
+            <td>0912345678</td>
+            <td>Elon@gmail.com</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>Mark</td>
+            <td>0912345678</td>
+            <td>Mark@gmail.com</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>Bill</td>
+            <td>0912345678</td>
+            <td>Bill@gmail.com</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>Lary</td>
+            <td>0912345678</td>
+            <td>Lary@gmail.com</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
     <script src="./jquery-3.6.0.js"></script>
     <script>
-      $('input:checkbox').click(function(){
-        //console.log($(this).is(':checked'));
-        if($(this).is(':checked')==true){
-          $(this).parents('tr').css('background','blue')
-        }
-        else{
-          $(this).parents('tr').css('background','#fff')
+      //方法一
+      $('input[type="checkbox"]').click(function () {
+        console.log("hi", $(this).attr("checked"));
+        console.log("hi", $(this).prop("checked"));
+        if ($(this).prop("checked")) {
+          $(this).closest("tr").css("background", "lightblue");
+        } else {
+          $(this).closest("tr").css("background", "transparent");
         }
       });
+      //attr 屬性
+      //prop 狀態
+
+      //方法二
+      // $('input:checkbox').click(function(){
+      //   //console.log($(this).is(':checked'));
+      //   if($(this).is(':checked')==true){
+      //     $(this).closest('tr').css('background','lightblue')
+      //   }
+      //   else{
+      //     $(this).closest('tr').css('background','transparent')
+      //   }
+      // });
+
+      //方法三
+      // $('input[type="checkbox"]').click(function () {
+      // $('tr').css('background', 'transparent');
+      // $('input:checked').closest('tr').css('background', 'lightblue');
+      // });
     </script>
   </body>
 </html>
