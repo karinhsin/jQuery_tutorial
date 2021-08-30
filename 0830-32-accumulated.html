@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accumulated</title>
+</head>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: #afa;
+        transition: 1s;
+    }
+</style>
+<body>
+    <div class="box">box</div>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+
+        //累加 方法一（自己拿出來去加）
+        // $('.box').on('click',function(){
+        //     //console.log('hi');
+        //     const boxWidth = $('.box').css('width');
+        //     console.log('boxWidth',boxWidth);
+        //     console.log('boxWidth+10',parseInt(boxWidth)+10);
+        //     $('.box').css('width', parseInt(boxWidth)+ 10);
+        // });
+
+        //方法二 +=
+        $('.box').on('click',function(){
+            $(this).css("width", "+=100");
+        });
+    </script>
+</body>
+</html>
