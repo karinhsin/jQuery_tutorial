@@ -50,15 +50,15 @@
       //方法一
       $('input[type="checkbox"]').click(function () {
         console.log("hi", $(this).attr("checked"));
+        //attr 屬性：看html有沒有這個屬性 有就會印 沒有就是undefined
         console.log("hi", $(this).prop("checked"));
+        //prop 狀態 有會印true 沒有會印false
         if ($(this).prop("checked")) {
           $(this).closest("tr").css("background", "lightblue");
         } else {
           $(this).closest("tr").css("background", "transparent");
         }
       });
-      //attr 屬性
-      //prop 狀態
 
       //方法二
       // $('input:checkbox').click(function(){
