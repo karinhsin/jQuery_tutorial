@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggleClass.hasClass</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #afa;
+            transition:1s;
+        }
+        .w200{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleClass">ToggleClass</button>
+    <button id="hasClass">HasClass</button>
+    <div class="box"></div>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $('#toggleClass').on('click', function(){
+            console.log('hi');
+            $('.box').toggleClass('w200');
+        });
+
+        $('#hasClass').on('click', function(){
+            console.log('hasClass result:',$('.box').hasClass('w200'));
+
+            if($('.box').hasClass('w200')){
+                
+            }
+            else{
+
+            }
+        });
+        //.toggleClass()- 動態切換 class
+        //.hasClass()- 判斷是否有某個 class
+    </script>
+</body>
+</html>
