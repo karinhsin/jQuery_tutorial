@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        p{
+            font-size: 12px;
+        } 
+        
+        .s{
+            font-size: 12px;
+        }
+        .m{
+            font-size: 18px;
+        }
+        .l{
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="btn-group">
+                <button class="btn-s btn btn-info">S</button>
+                <button class="btn-m btn btn-info">M</button>
+                <button class="btn-l btn btn-info">L</button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <h2>jQuery</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus magnam iusto quibusdam minus voluptatum commodi reprehenderit. Doloribus, quo. Vero ratione officia deleniti, maiores vel placeat ut dolorem facilis aut veniam?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus magnam iusto quibusdam minus voluptatum commodi reprehenderit. Doloribus, quo. Vero ratione officia deleniti, maiores vel placeat ut dolorem facilis aut veniam?
+            </p>
+    </div>
+    </div>
+    
+     <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script>
+            //利用按鈕切換文字大小
+
+            $('.btn-s').on('click', function(){
+            console.log('btn-s');
+            $('p').removeClass().addClass('s');
+            $(this).addClass('active').siblings().removeClass('active');
+            //只有被點的按鈕會active
+            });
+            $('.btn-m').on('click', function(){
+            console.log('btn-m');
+            $('p').removeClass().addClass('m');
+            $(this).addClass('active').siblings().removeClass('active');
+            });
+            $('.btn-l').on('click', function(){
+            console.log('btn-l');
+            $('p').removeClass().addClass('l');
+            $(this).addClass('active').siblings().removeClass('active');
+            });
+            //toggle適合用在開跟關（兩套css切換）
+            //這題有三個選項的不適合用toggle
+
+            $('.btn').on('click',function(){
+                console.log('hi S',$(this).is(':contains("S")'));
+                console.log('hi M',$(this).is(':contains("M")'));
+                console.log('hi L',$(this).is(':contains("L")'));
+
+                if($(this).is(':contains("S")')){
+                    $('p').removeClass().addClass('s');  
+                }
+            });
+        </script>
+</body>
+
+</html>
