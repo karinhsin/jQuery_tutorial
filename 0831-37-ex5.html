@@ -72,11 +72,13 @@
 
             $('.btn').on('click',function(){
                 console.log('hi S',$(this).is(':contains("S")'));
+                //is:jquery的方法 判斷內容是不是S
                 console.log('hi M',$(this).is(':contains("M")'));
                 console.log('hi L',$(this).is(':contains("L")'));
 
                 if($(this).is(':contains("S")')){
                     $('p').removeClass().addClass('s');  
+                    //是的話會回布林值 true或false
                 }
             });
         </script>
