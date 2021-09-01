@@ -10,7 +10,7 @@
             margin: 8px;
         }
         .height{
-            height: 500px;
+            height: 1200px;
             width: 100%;
             background-color: #ccc;
         }
@@ -25,6 +25,7 @@
 <body>
     <div class="height"></div>
     <div class="box"></div>
+    <div class="height"></div>
 
     <script src="./jquery-3.6.0.js"></script>
     <script>
@@ -39,9 +40,30 @@
 
         //也可以傳入一個物件設定他的位置(數值為字串)
         //移動到網頁的 top:50px left:100px 這個絕對位置
-        $('.box').offset({
-             top: '50', //數值為字串
-             left: '100',
+        // $('.box').offset({
+        //      top: '60', //數值為字串
+        //      left: '200',
+        // });
+
+        $(window).scroll(function(){
+            console.log('scrollTop',$(window).scrollTop());
+
+            console.log('windowHeight',$(window).height());
+            //方法一
+            //先用上面那行看大概到哪邊console log出來的數字直接寫
+            // if($(window).scrollTop()>526){
+            //     $('.box').css('background','orange');
+            // }
+
+            //方法二
+            //到300px的時候變色
+            // if($(window).scrollTop() > ($('.box').offset().top - $(window).height()+300) )  {
+            //     $('.box').css('background','orange');
+            // }
+            //到視窗中間的時候變色
+            if($(window).scrollTop() > ($('.box').offset().top - $(window).height() / 2) )  {
+                $('.box').css('background','orange');
+            }
         });
     </script>
 </body>
