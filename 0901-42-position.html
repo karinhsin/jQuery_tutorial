@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        .wrap{
+            position: relative;
+            width: 800px;
+            height: 400px;
+            background-color: #ccc;
+            margin: 50px;
+            padding: 10px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #afa;
+            /* margin: 10px; */
+        }
+        .box2{
+            background-color: #faf;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+        <div class="box box2"></div>
+    </div>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        console.log('position:',$('.box').position());
+        console.log('position:',$('.box2').position());
+        //position() - 取得一個物件，包含top和left 
+        //position().left - 取得X座標 
+        //position().top - 取得Y座標 
+        //使用方法和絕對位置基本上一樣，只是座標參考起始點位置不同
+    </script>
+</body>
+</html>
