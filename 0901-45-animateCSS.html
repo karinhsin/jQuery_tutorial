@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animate css</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  </head>
+  <body>
+    <h1 class="animate__animated">An animated element</h1>
+
+    <button data-animation-name="animate__bounce">bounce</button>
+    <button data-animation-name="animate__shakeY">shakeY</button>
+    <button data-animation-name="animate__heartBeat">heartBeat</button>
+    <button data-animation-name="animate__flash">flash</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"></script>
+
+    <script>
+    //搭配 animate.css
+    //寫法一
+    //   $('button').on('click', function () {
+
+    //       console.log('mydata:',$(this).data('animation-name'));
+    //       const animateName = $(this).data('animation-name');
+
+    //     //h1先加一個class 開始執行動畫 動畫結束後把class remove掉
+    //     $('h1')
+    //     .addClass(animateName)
+    //     .one('animationend', function(){
+    //       $(this).removeClass(animateName);
+    //     });
+    // });
+
+    //寫法二
+    $('button').on('click', function () {
+          console.log('mydata:',$(this).text());
+          const animateName = 'animate__' + $(this).text();
+
+        //h1先加一個class 開始執行動畫 動畫結束後把class remove掉
+        $('h1')
+        .addClass(animateName)
+        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
+    , function(){
+          $(this).removeClass(animateName);
+        });
+    });
+    </script>
+  </body>
+</html>
