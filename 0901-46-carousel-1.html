@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>carousel無限列車篇</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+        }
+        .wrap {
+            max-width: 800px;
+            height: 550px;
+            overflow: hidden;
+            position: relative;
+        }
+        ul.train {
+            display: flex;
+            width: 5600px;
+            height: 100%;
+            list-style: none;
+            padding: 0;
+            transform: translateX(-0px);
+            transition: .5s;
+        }
+        li.car img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slider-dots {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .slider-dots li {
+            width: 40px;
+            height: 10px;
+            border: 2px solid #fff;
+            margin: 0 4px;
+        }
+        /* 讓初始值的指示點即為白色的方法一（沒設定的話是透明） */
+        .left-arrow,.right-arrow {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            /* background-color: #ccc; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .right-arrow {
+            right: 0;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="wrap">
+        <ul class="train">
+            <li class="car"><img src="./imgs/slide5.jpg" alt=""></li>
+            <li class="car"><img src="./imgs/slide1.jpg" alt=""></li>
+            <li class="car"><img src="./imgs/slide2.jpg" alt=""></li>
+            <li class="car"><img src="./imgs/slide3.jpg" alt=""></li>
+            <li class="car"><img src="./imgs/slide4.jpg" alt=""></li>
+            <li class="car"><img src="./imgs/slide5.jpg" alt=""></li>
+            <li class="car"><img src="./imgs/slide1.jpg" alt=""></li>
+        </ul>
+        <ul class="slider-dots">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="left-arrow">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="right-arrow">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        let page=0;
+        
+        //setInterval：區間 每多久做一次 自動輪播較適合
+        //setTimeout先delay幾秒後做一次 自動輪播比較不適合用這個
+        //因為後面也會用到 直接設一個function 之後可以直接callback
+        let myIntervalID = '';
+        function startInterval(){
+            myIntervalID = setInterval(()=>{
+            page++; 
+
+            if(page>4){
+                page=0;
+            }
+            //console.log('hi',page);
+            // $('.train').css('transform',`translateX(${page*-800}px)`);
+            //讓載著五張圖片的火車往左移動 輪播
+            // $('.slider-dots li').eq(page).css('background','#fff').siblings().css('background','transparent');
+            //輪播加上指示點 使用eq選擇當頁
+            changePage();
+            },3000); 
+        }
+    
+        $('.slider-dots li').hover(function(){
+            clearInterval(myIntervalID);  
+            //滑鼠hover的時候讓畫面停在那一頁 停止輪播
+
+        //1.找到目前hover到的是第幾個li 用index這個方法
+        //index是看html架構 家族裡排行的是第幾個li
+        console.log('index:', $(this).index());
+        page = $(this).index();
+        console.log('move x:', $(this).index() * -800);
+        //2.火車要移動多少距離
+        //hover的時候console.log寬度倍數
+    
+        //$('.train').css('transform','translateX(-800px)');
+        //拆解 如果沒辦法馬上寫出輪播 第一步可以先寫死 至少先換一張
+        
+        //3.選取火車dom並修改css 修改transform:translateX(???px)
+        // $('ul.train').css('transform',`translateX(${$(this).index()*-800}px)`);
+        // //改寫第一步 後面插變數 translateX(+ n*-800 +px)
+        // //原本是"字串＋變數＋字串" 
+        // //用模板字串的話就是:`字串${變數}字串`
+
+        // $(this).css('background','#fff').siblings().css('background','transparent');
+        //指示點，hover到就變白色，除了選到的那個以外其他都透明
+        changePage();
+        },function(){
+            //startInterval();
+        });
+
+        function changePage() {
+            const moveX = ((page) * -800) - 800;
+            $('ul.train').css('transform', `translateX(${moveX}px)`);
+            $('.slider-dots li').eq(page).css('background', '#fff').siblings().css('background', 'transparent');
+        }
+        //startInterval();  //滑鼠離開時繼續輪播
+        $('.slider-dots li').eq(0).css('background','#fff');
+        //讓初始值的指示點即為白色的方法二（沒設定的話是透明
+        $('.left-arrow').on('click',function(){
+            console.log('left-arrow');
+            page--;
+            // if(page<0){
+            //     page=4;
+            // }
+            changePage();
+        });
+        $('.right-arrow').on('click', function () {
+            console.log('right-arrow');
+            page++;
+            if (page > 5) {
+                page = 0;
+            }
+            changePage();
+        });
+
+        changePage();
+    </script>
+</body>
+</html>
