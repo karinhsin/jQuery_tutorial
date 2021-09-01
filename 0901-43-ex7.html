@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex7</title>
+    <style>
+        body{
+            margin: 0;
+            height: 500vh;
+        }
+        .banner{
+            height: calc(100vh - 60px);
+            background: url(https://picsum.photos/id/1039/700/400)no-repeat;
+            background-size:cover;
+        }
+        nav{
+            height: 60px;
+            background-color: lightgreen;
+            text-align: center;
+            color:rgb(159,156,156);
+            position:static;
+        }
+        nav.fixed{
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"></div>
+    <nav>Hello Nav</nav>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        //練習: Scroll to fixed
+        //效果: 製作捲動到一定超過選單高度時，選單會貼到畫面頂端
+        //提示: 偵測 scroll event，判斷是否大於選單的位置後切換 css
+        //利用 $(”#element“).offset().top; 可抓到位置再跟 scrollTop比較判斷
+
+        //自己練習
+        // $(window).scroll(function(){
+        //     if($(window).scrollTop() > ($('nav').offset().top)){
+        //         $('nav').addClass('fixed');
+        //     }
+        //     if($(window).scrollTop() < ($(window).height())){
+        //         $('nav').removeClass('fixed');
+        //     }
+        // });
+
+        //老師版
+        let offsetTop = $('nav').offset().top;
+
+        $(window).resize(function(){
+            offsetTop = $('nav').offset().top
+        });
+
+        $(window).scroll(function(){
+            console.log('offsetTop',offsetTop);
+            console.log('window scrollTop',$(window).scrollTop());
+            if($(window).scrollTop() >= offsetTop){
+                $('nav').addClass('fixed');
+            }
+            else{
+                $('nav').removeClass('fixed');
+            }
+        });
+    </script>
+</body>
+</html>
