@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event bubbling</title>
+    <style>
+        .wrap{
+            width: 800px;
+            height: 400px;
+            background-color: #ccc;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #afa;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"></script>
+      <script>
+          $('.wrap').on('click',function(){
+              console.log('wrap click');
+              console.log('wrap click target',event.target);
+              console.log('wrap click currentTarget', event.currentTarget);
+              console.log('wrap click this',$(this));
+          });
+          $('.box').on('click',function(){
+              console.log('box click');
+              console.log('box click', event.target);
+              console.log('box click', event.currentTarget);
+              //event.stopPropagation();
+          });
+          //取消事件傳遞 event.stopPropagation
+          //回去的路上遇到監聽器 會被'被動地'觸發(直系親屬容易出事)
+          //先捕獲 再冒泡
+      </script>
+</body>
+</html>
