@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html attr</title>
+    <style>
+        .img-wrap{
+            width: 100px;
+            height: 100px;
+        }
+        .img-wrap img{
+            width: 100%;
+            height: 100%; 
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="img-wrap">
+        <img src="./imgs/airplane.png" alt="">
+    </div>
+    <button id="pikachu">Pikachu</button>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        //HTML 操作  .attr()
+        $('#pikachu').on('click', function(){
+            console.log('pikachu',$('.img-wrap img').attr('src'));
+            $('.img-wrap img').attr('src','./imgs/3拷貝.png') //逗號後面接想要改的
+            //取得或設定 HTML tag attribute屬性 的值
+            //<img src=“./imgs/” alt=“”>
+            //取值 $(‘小圖’).attr( ‘src’ )
+            //設值 $(‘大圖’).attr(‘src’, $(‘小圖’).attr( ‘src’ ))
+        });
+    </script>
+</body>
+</html>
