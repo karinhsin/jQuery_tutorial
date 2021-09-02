@@ -12,22 +12,22 @@
         }
         .wrap {
             max-width: 800px;
-            height: 550px;
+            height: 400px;
             overflow: hidden;
             position: relative;
         }
         ul.train {
             display: flex;
             width: 5600px;
-            height: 100%;
+            /* height: 100%; */
             list-style: none;
             padding: 0;
             transform: translateX(-0px);
-            transition: .5s;
+            /* transition: .5s; */
         }
         li.car img {
             width: 100%;
-            height: 100%;
+            /* height: 100%; */
             object-fit: cover;
         }
         .slider-dots {
@@ -45,8 +45,13 @@
             border: 2px solid #fff;
             margin: 0 4px;
         }
-        /* 讓初始值的指示點即為白色的方法一（沒設定的話是透明） */
-        .left-arrow,.right-arrow {
+
+        /* .slider-dots li:nth-child(1) {
+            background: #FFF;
+        } */
+
+        .left-arrow,
+        .right-arrow {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -66,7 +71,7 @@
 </head>
 <body>
     <div class="wrap">
-        <ul class="train">
+         <ul class="train">
             <li class="car"><img src="./imgs/slide5.jpg" alt=""></li>
             <li class="car"><img src="./imgs/slide1.jpg" alt=""></li>
             <li class="car"><img src="./imgs/slide2.jpg" alt=""></li>
@@ -141,9 +146,17 @@
             //startInterval();
         });
 
+        //改變畫面
         function changePage() {
+            const moveX = ((page) * -800) - 800; //因為原本第一頁前面有一張假圖 所以再扣800 當作起始點
+            $('ul.train').css('transition', '0.2s').css('transform', `translateX(${moveX}px)`);
+            $('.slider-dots li').eq(page).css('background', '#fff').siblings().css('background', 'transparent');
+        }
+
+        //安靜地改變畫面
+        function changePageQuietly() {
             const moveX = ((page) * -800) - 800;
-            $('ul.train').css('transform', `translateX(${moveX}px)`);
+            $('ul.train').css('transition', 'none').css('transform', `translateX(${moveX}px)`);
             $('.slider-dots li').eq(page).css('background', '#fff').siblings().css('background', 'transparent');
         }
         //startInterval();  //滑鼠離開時繼續輪播
@@ -160,11 +173,19 @@
         $('.right-arrow').on('click', function () {
             console.log('right-arrow');
             page++;
-            if (page > 5) {
-                page = 0;
-            }
+            if (page > 5) return;  //安全機制 避免他按太快到假圖5
+
             changePage();
         });
+
+        $('ul.train').on('transitionend', function () {
+            console.log('page', page);
+
+            if (page >= 5) {
+                page = 0;
+                changePageQuietly();
+            }
+        })
 
         changePage();
     </script>
