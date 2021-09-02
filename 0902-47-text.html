@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html text</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        span{
+            color:pink;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn btn-primary" id="getText">Get Text</button>
+    <button class="btn btn-primary" id="getHtml">Get Html</button>
+    <button class="btn btn-primary" id="getHtmlWriteText">Get Html Write</button>
+
+    <h1 id="sample">Hello <span>World</span></h1>
+    <h1 id="result"></h1>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"></script>
+    <script>
+        //HTML 操作 .text() .html()
+        $('#getText').on('click', function(){
+            console.log('getText',$('#sample').text());
+            const sampleText = $('#sample').text();
+            $('#result').text(sampleText); 
+            //取得或設定 HTML tag 內的文字
+            //取值: .text()
+            //設值: .text(text)
+            //不包含標籤 拿文字的時候標籤會消失 所以拿不到span的顏色
+            //在js的時候叫innerText 
+        });
+        $('#getHtml').on('click', function(){
+            console.log('getHtml',$('#sample').html()); //印出來的是帶有span標籤的
+            const sampleHtml = $('#sample').html();
+            $('#result').html(sampleHtml); 
+            //跟.text()類似，但會取得或設定 HTML tag 的HTML內容
+            //取值: .html()
+            //設值: .html(html)
+            //包含標籤
+            //把帶有標籤的文字塞進去 用html的話標籤也拿得到 跟原本的一模一樣
+
+            // let htmlString = '';
+            // for(let i=0; i<10; i++) {
+            //     htmlString +=`<li>item ${i+1}</li>`;
+            // }
+            // $('#result').html(htmlString); //希望連標籤都生效就用html
+        });
+
+        $('#getHtmlWriteText').on('click', function(){
+            console.log('getHtmlWriteText');
+            const sampleHTML =$('#sample').html();
+            $('#result').text(sampleHTML);
+        })
+    </script>
+</body>
+</html>
