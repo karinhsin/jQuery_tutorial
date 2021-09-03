@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detach</title>
+</head>
+<body>
+    <div id="detachBtn">detach</div>
+    <div id="pasteBtn">paste</div>
+    <div class="container">
+        <div class="row">
+            <h1 class="hello helloWorld">Hello World</h1>
+            <h1 class="hello helloWorld1">Hello World1</h1>
+            <h1 class="hello helloWorld2">Hello World2</h1>
+        </div>
+    </div>
+
+    <script src="./jquery-3.6.0.js"></script>
+     <script>
+         //detach較少用到 剪下貼上的概念
+         let myh1;
+         $('#detachBtn').on('click', function(){
+             myh1 = $('.helloWorld1').detach(); //剪下（不想直接刪除想留下的時候可以用）
+             console.log('myh1',myh1)
+         });
+
+         $('#pasteBtn').on('click',function(){
+             $('.row').append(myh1);
+         });
+     </script>
+</body>
+</html>
