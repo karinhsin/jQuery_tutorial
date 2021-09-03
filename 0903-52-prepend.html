@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prepend</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #afa;
+        }
+
+        .del-text {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <button>Add</button>
+    <div class="container">
+        <div class="row">
+            <ul>
+                <!-- prepend here -->
+                <li>item 1</li>
+                <li>item 2</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        //可以用pretend做個簡易待辦事項
+        $('button').on('click', function () {
+            const msg = $('input').val();
+            // if (msg) {
+            $('ul').prepend(`<li>${msg}</li>`);
+            // }
+        })
+
+        $('ul').on('click', 'li', function () {
+            $(this).toggleClass('del-text');
+        });
+    </script>
+</body>
+</html>
