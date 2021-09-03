@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wrapAll</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    .img-wrap {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 10px;
+    }
+
+    .img-wrap > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+        <div class="row">
+            <img src="./imgs/person1.jpg" alt="">
+            <img src="./imgs/person2.jpg" alt="">
+            <img src="./imgs/person3.jpg" alt="">
+        </div>
+        <div class="row">
+            <img src="./imgs/person4.jpg" alt="">
+            <img src="./imgs/person5.jpg" alt="">
+        </div>
+    </div>
+
+     <script src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"></script>
+    <script>
+        //.wrapAll()  全部裝在一起
+        //不常用 不能改html 又硬要包在一起的時候會用到
+      $("img").wrapAll("<div class='img-wrap'></div>");
+      //雖然person4.5在別的櫃位 但也是img的一環 所以會被裝在同一個袋子裡
+    </script>
+  </body>
+</html>
