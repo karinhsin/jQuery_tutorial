@@ -11,11 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         * {
             box-sizing: border-box;
         }
+
         body {
             height: 300vh;
             font-family: Shuei Mincho L;
@@ -23,110 +24,143 @@
             font-size: 14px;
             background-color: #fcfcfc;
         }
+
         /* --------------nav bar-------------- */
-        .row{
+        .row {
             margin-right: 0;
             margin-left: 0;
         }
+
         .navbar-light .navbar-nav .nav-link {
             color: #000;
         }
+
         .btn-outline-success {
             font-size: 14px;
             color: #000;
             border-color: #000;
             border-radius: 0;
         }
+
         .btn-outline-success:hover {
             border-color: #000;
             background-color: #000;
             color: #fff;
         }
+
         .btn {
             padding: 10px;
             right: 50px;
         }
+
         /* --------------banner-------------- */
         img {
             max-width: 100%;
         }
+
         .banner {
+            position: relative;
             align-items: center;
             height: 100vh;
             min-height: 100vh;
+            min-width: 100vw;
         }
+
+        #banner-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("https://tsurutama.jp/wp-content/themes/simplicity2-child/images/keyvisual-pc05.jpg") no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
         @media screen and (min-width: 576px) {
             .navbar {
                 padding-top: 0;
                 padding-right: 50px;
                 margin-top: -50px;
             }
-            .banner{
-            background: url("https://tsurutama.jp/wp-content/themes/simplicity2-child/images/keyvisual-pc05.jpg") no-repeat;
-            justify-content: space-evenly;
-            background-size: cover;
-            background-position: center; 
+
+            .banner {
+                justify-content: space-evenly;
             }
-            .sp-only{
-                display:none;
+
+            .sp-only {
+                display: none;
             }
+
             .banner-left {
-            width: 5vw;
-            margin: 0;
-            left:-30vw;
+                width: 5vw;
+                margin: 0;
+                left: -30vw;
             }
+
             .banner-right {
-            width: 2.3vw;
-            margin: 0;
-            right: -20vw;
+                width: 2.3vw;
+                margin: 0;
+                right: -20vw;
             }
+
             .banner-logo {
-            width: 11vw;
-            margin: 0;
-            margin-right: 35px;
+                width: 11vw;
+                margin: 0;
+                margin-right: 35px;
             }
-            .scroll{
-            width: 100%;
-            display:flex;
-            justify-content: center;
-            margin-bottom: 0;
+
+            .scroll {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 0;
             }
-            .scroll img{
-            object-fit: contain;
+
+            .scroll img {
+                object-fit: contain;
             }
         }
+
         @media screen and (max-width: 575.99px) {
-            .banner{
-                background: url("https://tsurutama.jp/wp-content/themes/simplicity2-child/images/keyvisual-sp05.jpg")no-repeat ;
-                background-size: 100% ;
+            .banner {
+                background: url("https://tsurutama.jp/wp-content/themes/simplicity2-child/images/keyvisual-sp05.jpg")no-repeat;
+                background-size: 100%;
                 background-size: cover;
                 background-position: center;
                 flex-direction: column;
                 justify-content: space-around;
             }
-            .pc-only{
+
+            .pc-only {
                 display: none;
             }
-            .sp-only{
-                display:block;
+
+            .sp-only {
+                display: block;
             }
-            .banner-right{
-                display:none;
+
+            .banner-right {
+                display: none;
             }
-            .banner-left{
+
+            .banner-left {
                 width: 15vw;
             }
-            .banner-logo{
+
+            .banner-logo {
                 width: 25vw;
                 margin: 15% 18%;
             }
-            .scroll{
+
+            .scroll {
                 width: 5vw;
                 margin-bottom: 10%;
             }
         }
+
         /* --------------news-------------- */
-            p {
+        p {
             display: block;
             margin-block-start: 1em;
             margin-block-end: 1em;
@@ -134,18 +168,22 @@
             margin-inline-end: 0px;
             color: #000;
         }
+
         a {
             text-decoration: none;
             color: #000;
             word-wrap: break-word;
         }
-        a:hover{
+
+        a:hover {
             color: rgba(0, 0, 0, 0.705);
             text-decoration: none;
         }
+
         a.arrow5 {
             font-size: 13px;
         }
+
         a.arrow5:after {
             content: " ";
             display: inline-block;
@@ -156,11 +194,13 @@
             background: url("https://tsurutama.jp/wp-content/themes/simplicity2-child/images/arrow5.png") no-repeat left top;
             margin: -5px 1em 0 1em;
         }
-        .article{
+
+        .article {
             position: relative;
             font-size: 14px;
             line-height: 180%;
         }
+
         .news-wrap h2 {
             font-size: 20px;
             line-height: 1.6;
@@ -169,258 +209,160 @@
         }
 
         @media screen and (max-width: 575.99px) {
-            .article{
+            .article {
                 margin: 0 auto;
             }
+
             .news-wrap {
-               width: 90%;
-               margin: 40px auto 0 auto;
+                width: 90%;
+                margin: 40px auto 0 auto;
             }
+
             .news-wrap h2 {
-               text-align: center;
+                text-align: center;
             }
+
             .news-wrap h2 span {
-              display: inline;
-              padding-bottom: 1em;
-              border-bottom: 1px solid #eee;
+                display: inline;
+                padding-bottom: 1em;
+                border-bottom: 1px solid #eee;
             }
+
             .news-list {
                 list-style-type: none;
                 margin: 0;
                 padding: 10%;
             }
+
             .news-list li {
                 margin-bottom: 5px;
             }
-            .news-list li a{
+
+            .news-list li a {
                 text-decoration: none;
                 color: #000;
             }
+
             .news-list li a .date {
                 display: block;
                 font-size: 12px;
                 color: #999;
             }
-            .news-list li a:hover{
-            color: rgba(0, 0, 0, 0.705);
+
+            .news-list li a:hover {
+                color: rgba(0, 0, 0, 0.705);
             }
-            .article ol, .article ul, .article dl {
+
+            .article ol,
+            .article ul,
+            .article dl {
                 line-height: 1.8em;
             }
+
             .news-wrap .text-link {
-                 text-align: right;
+                text-align: right;
             }
-            
+
         }
 
         @media screen and (min-width: 576px) {
-            .article{
+            .article {
                 margin: 0 auto;
             }
-            .news-wrap{
+
+            .news-wrap {
                 width: 100%;
                 margin-top: 110px;
             }
-            .news-wrap h2{
+
+            .news-wrap h2 {
                 position: absolute;
                 writing-mode: vertical-rl;
                 text-orientation: upright;
                 left: 115px;
                 top: 0;
             }
-            .news-list{
+
+            .news-list {
                 list-style-type: none;
                 margin-left: 170px;
                 padding: 30px 0 30px 100px;
                 border-left: 1px solid #eee;
             }
-            .news-list li{
+
+            .news-list li {
                 margin: 5px;
             }
+
             .news-list li a .date {
                 font-size: 12px;
                 color: #999;
                 margin-right: 1em;
             }
-            .text-link{
+
+            .text-link {
                 float: right;
             }
         }
+
         /* --------------history-------------- */
-        @media screen and (max-width: 575.99px){
-            .history{
-                display:flex;
-                flex-direction:column-reverse;
+        @media screen and (max-width: 575.99px) {
+            .history {
+                display: flex;
+                flex-direction: column-reverse;
                 margin-top: 30px;
                 padding-top: 20px;
                 margin-bottom: 10em;
             }
-            .history h2{
+
+            .history h2 {
                 text-align: center;
                 margin: 20px 0 !important;
                 display: inline;
             }
-            .text-link{
+
+            .text-link {
                 margin: 1em 0 0 1em;
             }
-            .text{
-                padding: 5% 10% 10% 10%;  
+
+            .text {
+                padding: 5% 10% 10% 10%;
             }
         }
-        .history{
-            display:flex;
-            justify-content:space-evenly;
+
+        .history {
+            display: flex;
+            justify-content: space-evenly;
         }
-        .history h2{
+
+        .history h2 {
             line-height: 1.6;
             font-size: 20px;
             margin: 0;
             color: #000;
-            
+
         }
-        .article img{
+
+        .article img {
             max-width: 100%;
             height: auto;
         }
-        .text{
+
+        .text {
             color: #000;
         }
-        .text-link a{
-            display:block;
+
+        .text-link a {
+            display: block;
             text-decoration: none;
-            color:#000;
+            color: #000;
             margin-top: 1em;
         }
-        a:hover{
+
+        a:hover {
             color: rgba(0, 0, 0, 0.705);
-            }
-        a.arrow:before{
-            content: " ";
-            display: inline-block;
-            position: relative;
-            top: -2px;
-            width: 17px;
-            height: 5px;
-            background: url("https://tsurutama.jp/wp-content/themes/simplicity2-child/images/arrow1.png") no-repeat left top;
-            margin: -5px 1em 0 0;
         }
-        .n{
-            visibility: hidden;
-            clear: both;
-            height: 0;
-        }
-        
-        @media screen and (min-width: 576px) {
-            .history{
-                margin-top: 130px;
-            }
-            .history h2{
-                writing-mode: vertical-rl;
-            }
-            .text{
-            width: 30%;
-            /* background-color: #fff; */
-            margin-top: 80px;
-            text-align: justify;
-            }
-            .text-link{
-                margin: 0 0 0 120px;
-            }
-            .history .img{
-            left: 0;
-            top: 0;
-            width: 40%;
-            display:flex;
-            flex-wrap: wrap;
-            }
-        }
-        
-        /* --------------product-------------- */
-        .introduce h2{
-            line-height: 1.6;
-            margin: 0;
-            font-size: 20px;
-            letter-spacing: 0.2em;
-        }
-        @media screen and (min-width: 576px) {
-            .row-h2{
-                padding-left: 100px;
-            }
-            .introduce{
-                margin-top: 100px;
-            }
-            .introduce h2{
-                left: 150px;
-                top: -50px;
-                writing-mode: vertical-rl;
-            }
-            .p{
-                width: 80%;
-                background-color: #fff;
-                text-align: right;
-                margin: 0;
-                padding: 3% 5%;
-            }
-            .product-item p{
-                color:#fff
-            }
-            .product-item{
-                margin-bottom:10px;
-            }
-            .product-item:hover .hover-text{
-                display: block;
-                background-color: #5f5f5f;
-                opacity:0.7;
-            }
-        }
-        @media screen and (max-width: 575.99px){
-            .introduce{
-                display:flex;
-                justify-content: center;
-            }
-            .introduce h2{
-                text-align: center;
-                margin: 20px 0 !important;
-                display: inline;
-                color: #000;
-            }
-            .p{
-                text-align: center;
-            }
-            .p p{
-                padding: 0 10%;
-                color:#000;
-            }
-            .product-item{
-                margin-bottom:0px !important;
-            }
-        }
-        span.hover-text{
-            display: none;
-            position: absolute;
-            top: 40%;
-            z-index: 1;
-            width: 100%;
-            font-size: 22px;
-            color: #fff;
-            text-align: center;
-            opacity: 1;
-        }
-        .span.hover-text{
-            display:block;
-        }
-        span.hover-text p{
-            font-size: 14px;
-        }
-        .product-item a.arrow{
-            top: 45%;
-            width: 100%;
-            text-align: center;
-            text-decoration: none;
-            color: #000;
-            font-size: 13px;
-            z-index: 1;
-        }
+
         a.arrow:before {
             content: " ";
             display: inline-block;
@@ -431,6 +373,156 @@
             background: url("https://tsurutama.jp/wp-content/themes/simplicity2-child/images/arrow1.png") no-repeat left top;
             margin: -5px 1em 0 0;
         }
+
+        .n {
+            visibility: hidden;
+            clear: both;
+            height: 0;
+        }
+
+        @media screen and (min-width: 576px) {
+            .history {
+                margin-top: 130px;
+            }
+
+            .history h2 {
+                writing-mode: vertical-rl;
+            }
+
+            .text {
+                width: 30%;
+                /* background-color: #fff; */
+                margin-top: 80px;
+                text-align: justify;
+            }
+
+            .text-link {
+                margin: 0 0 0 120px;
+            }
+
+            .history .img {
+                left: 0;
+                top: 0;
+                width: 40%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+
+        /* --------------product-------------- */
+        .introduce h2 {
+            line-height: 1.6;
+            margin: 0;
+            font-size: 20px;
+            letter-spacing: 0.2em;
+        }
+
+        @media screen and (min-width: 576px) {
+            .row-h2 {
+                padding-left: 100px;
+            }
+
+            .introduce {
+                margin-top: 100px;
+            }
+
+            .introduce h2 {
+                left: 150px;
+                top: -50px;
+                writing-mode: vertical-rl;
+            }
+
+            .p {
+                width: 80%;
+                background-color: #fff;
+                text-align: right;
+                margin: 0;
+                padding: 3% 5%;
+            }
+
+            .product-item p {
+                color: #fff
+            }
+
+            .product-item {
+                margin-bottom: 10px;
+            }
+
+            .product-item:hover .hover-text {
+                display: block;
+                background-color: #5f5f5f;
+                opacity: 0.7;
+            }
+        }
+
+        @media screen and (max-width: 575.99px) {
+            .introduce {
+                display: flex;
+                justify-content: center;
+            }
+
+            .introduce h2 {
+                text-align: center;
+                margin: 20px 0 !important;
+                display: inline;
+                color: #000;
+            }
+
+            .p {
+                text-align: center;
+            }
+
+            .p p {
+                padding: 0 10%;
+                color: #000;
+            }
+
+            .product-item {
+                margin-bottom: 0px !important;
+            }
+        }
+
+        span.hover-text {
+            display: none;
+            position: absolute;
+            top: 40%;
+            z-index: 1;
+            width: 100%;
+            font-size: 22px;
+            color: #fff;
+            text-align: center;
+            opacity: 1;
+        }
+
+        .span.hover-text {
+            display: block;
+        }
+
+        span.hover-text p {
+            font-size: 14px;
+        }
+
+        .product-item a.arrow {
+            top: 45%;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            color: #000;
+            font-size: 13px;
+            z-index: 1;
+        }
+
+        a.arrow:before {
+            content: " ";
+            display: inline-block;
+            position: relative;
+            top: -2px;
+            width: 17px;
+            height: 5px;
+            background: url("https://tsurutama.jp/wp-content/themes/simplicity2-child/images/arrow1.png") no-repeat left top;
+            margin: -5px 1em 0 0;
+        }
+
         page-top-image:after {
             content: " ";
             display: inline-block;
@@ -441,11 +533,13 @@
             background: url("https://tsurutama.jp/wp-content/themes/simplicity2-child/images/icon-arrow2.png") no-repeat left top;
             margin: -5px 1em 0 1em;
         }
+
         /* --------------top--------------  */
-        .top-link{
+        .top-link {
             height: 200px;
         }
-        .top-link a img{
+
+        .top-link a img {
             width: 20px;
             height: 75px;
             right: 4%;
@@ -453,60 +547,69 @@
         }
 
         /* --------------footer logo and address-------------- */
-        .address{
+        .address {
             font-size: 12px;
         }
-        .footer-right a span{
+
+        .footer-right a span {
             font-size: 12px;
-            color:#000;
+            color: #000;
             text-decoration: none;
         }
-        
-        .footer-right{
+
+        .footer-right {
             width: 240px;
             text-align: center;
         }
-        .container-footer{
+
+        .container-footer {
             background-color: #fff;
             padding: 130px 40px;
         }
+
         @media screen and (min-width: 576px) {
             .footer-logo {
-            width: 73px;
-            height: 98px;
-            object-fit: contain;
+                width: 73px;
+                height: 98px;
+                object-fit: contain;
             }
-            .footer-left{
-            display:flex;
-            justify-content:space-between
+
+            .footer-left {
+                display: flex;
+                justify-content: space-between
+            }
         }
-        }
+
         @media screen and (max-width: 575.99px) {
-            .container-footer{
+            .container-footer {
                 padding: 60px 40px;
             }
-            .address{
+
+            .address {
                 margin-top: 30px;
             }
-            .footer-left{
-                display:flex;
-                flex-direction:column;
+
+            .footer-left {
+                display: flex;
+                flex-direction: column;
                 align-items: center;
             }
         }
 
 
         /* --------------copyright-------------- */
-        @media screen and (max-width: 575.99px){
-            .copyright{
-                display:flex;
-                flex-direction:column-reverse;
+        @media screen and (max-width: 575.99px) {
+            .copyright {
+                display: flex;
+                flex-direction: column-reverse;
             }
-            .footer-right{
+
+            .footer-right {
                 width: 100%;
                 margin-top: 30px;
             }
         }
+
         .copyright {
             padding: 20px 40px;
             font-size: 80%;
@@ -524,11 +627,13 @@
             display: inline;
             padding: 0 2em;
         }
-        a:hover{
+
+        a:hover {
             color: rgba(0, 0, 0, 0.705);
-            }
-        .fab{
-            font-size:22px;
+        }
+
+        .fab {
+            font-size: 22px;
             color: #666;
         }
     </style>
@@ -536,49 +641,51 @@
 
 <body>
     <div class="container-fluid p-0  ">
-        <div id="dvImage" class="row banner">
+        <div id="banner-background">
+        </div>
+        <div class="row banner">
             <div class="hamburger col-lg-12 ">
                 <nav class="navbar navbar-expand-lg navbar-light  ">
-        <div class="container-fluid  justify-content-between">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="row collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="col-lg-11">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            マシュマロ和菓子とは
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">つるたまの歴史</a></li>
-                            <li><a class="dropdown-item" href="#">和菓子づくり</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">商品一覧</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">店舗案内</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">お知らせ</a>
-                    </li>
-                </ul>
-                </div>
-                <div class="col-lg-1">
-                    <form class="d-flex">
-                    <button class="btn btn-outline-success " type="submit">ONLINESHOP</button>
-                </form>
-                </div>
+                    <div class="container-fluid  justify-content-between">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="row collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class="col-lg-11">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            マシュマロ和菓子とは
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="#">つるたまの歴史</a></li>
+                                            <li><a class="dropdown-item" href="#">和菓子づくり</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">商品一覧</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">店舗案内</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">お知らせ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-1">
+                                <form class="d-flex">
+                                    <button class="btn btn-outline-success " type="submit">ONLINESHOP</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </nav>
             </div>
-        </div>
-            </nav>
-            </div>
-            
             <div class="banner-left">
                 <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/keyvisual-text1.png"
                     width="100%" alt="">
@@ -586,7 +693,8 @@
             <div class="banner-logo">
                 <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/keyvisual-logo.png"
                     width="100%" alt="" class="pc-only">
-                <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/keyvisual-logo-sp.png" width="100%" alt="" class="sp-only">
+                <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/keyvisual-logo-sp.png"
+                    width="100%" alt="" class="sp-only">
             </div>
             <div class="banner-right">
                 <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/keyvisual-text2.png"
@@ -597,7 +705,7 @@
                     <img class="animate__animated animate__slideOutDown animate__infinite"
                         src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/icon_scroll.png"
                         width="100%" alt=""></a>
-            </div>  
+            </div>
         </div>
     </div>
 
@@ -608,29 +716,26 @@
             </h2>
             <ul class="news-list list-unstyled">
                 <li>
-                    <a href=https://tsurutama.jp/news/746>
-                        <span class='date'>2019/01/22</span>
+                    <a href=https://tsurutama.jp/news/746> <span class='date'>2019/01/22</span>
                         <span>◆ テレビ放送のお知らせ 「羽鳥慎一モーニングショー」1月23日水曜日朝8時（テレビ朝日）</span>
                     </a>
                 </li>
                 <li>
-                    <a href=https://tsurutama.jp/news/737>
-                        <span class='date'>2018/05/10</span>
+                    <a href=https://tsurutama.jp/news/737> <span class='date'>2018/05/10</span>
                         <span>明日（5月11日）ZIP!で「重」が紹介されます。</span>
                     </a>
                 </li>
                 <li>
-                    <a href=https://tsurutama.jp/news/731>
-                        <span class='date'>2018/02/27</span>
+                    <a href=https://tsurutama.jp/news/731> <span class='date'>2018/02/27</span>
                         <span>いよいよ明日が最終日 &#8211; 大阪・阪急うめだ本店特設会場</span>
                     </a>
                 </li>
             </ul>
-        <div class="text-link">
-            <a href="#" class="arrow5">more</a>
+            <div class="text-link">
+                <a href="#" class="arrow5">more</a>
+            </div>
+            <div id="the-content" class="entry-content"></div>
         </div>
-        <div id="the-content" class="entry-content"></div>
-    </div>
         <div class="history">
             <div class="img">
                 <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/home-img1.jpg" alt=""
@@ -639,7 +744,7 @@
                     <a href="#" class="arrow">つるたまの歴史</a>
                     <a href="#" class="arrow">和菓子づくり</a>
                 </div>
-            </div>    
+            </div>
             <div class="text">
                 これまで私たちは、街の菓子舗として様々な和菓子をつくってきました。明治時代、初代・治四郎のひらめきと職人の技によって誕生した「つるの玉子」。マシュマロの中に餡を包んだ斬新な和菓子は、またたく間に岡山を代表する銘菓となりました。<br>
                 130年の時を経た今、もう一度原点に戻り、新たな和菓子の創造に挑みます。前例のないところから、マシュマロ和菓子という新たなジャンルを生み出した初代の挑戦の魂を受け継いで。技法、食感、味すべてに創造性を吹き込み、「つるたま」が誕生しました。
@@ -656,8 +761,8 @@
                 </div>
             </div>
             <div class="p">
-                    <p>マシュマロ和菓子を創造し続けるつるたまの菓子</p>
-                </div>
+                <p>マシュマロ和菓子を創造し続けるつるたまの菓子</p>
+            </div>
             <div class="row product-list">
                 <div class="product-item col-lg-3 col-6 p-0 mb-3">
                     <a href="#">
@@ -665,7 +770,7 @@
                             <span>重-ju</span>
                             <p>マシュマロ羊羹</p>
                         </span>
-                                <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img1.jpg"
+                        <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img1.jpg"
                             alt="" width="100%" />
                     </a>
                 </div>
@@ -675,132 +780,135 @@
                             <span>円-en</span>
                             <p>表裏マシュマロ</p>
                         </span>
-                                <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img2.jpg"
+                        <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img2.jpg"
                             alt="" width="100%" />
-                        </a>
-                    </div>
+                    </a>
+                </div>
                 <div class="product-item col-lg-3 col-6 p-0 mb-3">
                     <a href="#">
                         <span class="hover-text">
                             <span>点-ten</span>
                             <p>和マシュマロ</p>
                         </span>
-                                <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img3.jpg"
+                        <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img3.jpg"
                             alt="" width="100%" />
-                        </a>
-                    </div>
+                    </a>
+                </div>
                 <div class="product-item col-lg-3 col-6 p-0 mb-3">
                     <a href="#">
                         <span class="hover-text">
                             <span>玉-gyoku</span>
                             <p>マシュマロ饅頭</p>
                         </span>
-                                <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img4.jpg"
+                        <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img4.jpg"
                             alt="" width="100%" />
-                        </a>
-                    </div>
+                    </a>
+                </div>
                 <div class="product-item col-lg-3 col-6 p-0 mb-3">
                     <a href="#">
                         <span class="hover-text">
                             <span>面</span>-men
                             <p>マシュマロ飴ペースト</p>
                         </span>
-                                <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img5.jpg"
+                        <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img5.jpg"
                             alt="" width="100%" />
-                        </a>
-                    </div>
+                    </a>
+                </div>
                 <div class="product-item col-lg-3 col-6 p-0 mb-3">
                     <a href="#">
                         <span class="hover-text">
                             <span>ギフトセット</span>
                             <p>マシュマロ和菓子セット</p>
                         </span>
-                            <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img6.jpg"
+                        <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img6.jpg"
                             alt="" width="100%" />
-                        </a>
-                    </div>
+                    </a>
+                </div>
                 <div class="product-item col-lg-3 col-6 p-0 mb-3">
                     <a href="#">
                         <span class="hover-text">
                             <span>ギフトセット</span>
                             <p>マシュマロ和菓子セット</p>
                         </span>
-                            <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img7.jpg"
+                        <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/product-img7.jpg"
                             alt="" width="100%" />
-                        </a>
-                    </div>
-                <div class="product-item col-lg-3 col-6 d-flex align-items-center p-0 mb-3" style="background-color: #fff;">
-                        <a href="#" class="arrow">商品一覧はこちら
-                        </a>
+                    </a>
                 </div>
-            </div>
-        </div>
-    </div>
-<div class="top-link d-flex d-flex flex-column-reverse align-items-end pb-5 mr-5">
-    <a href="#">
-        <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/icon-arrow2.png" alt="">
-    </a>
-</div>
-        <div class="container-footer">
-            <div id="row footer ">
-                    <div class="footer-left">
-                        <div class="footer-logo">
-                            <a href="#">
-                                <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/footer-logo.png" alt="" width:="73" height="98">
-                                </a>
-                            </div>
-                        <div class="address">
-                            <p>つるの玉子本舗<br/>〒700-0827<br/>岡山県岡山市北区平和町 2-1<br />TEL: 086-222-2357</p>
-                        </div>
-                        <div class="footer-right ">
-                        <a href="#">
-                            <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/bnr-tsurutama.jpg" alt="">
-                            <span>つるの玉子本舗webサイト</span>
-                        </a>
-                        </div>
-                    </div>
-                    
-            </div> 
-        </div>
-        <div class="container-copyright">
-            <div class="row copyright justify-content-between ">
-                <div class="footer-copyright col-lg-6 col-sm-1">
-                    <p>© TSURUTAMA. All rights reserved.</p>
-                </div>
-                <div class="footer-nav d-flex justify-content-between align-items-center">
-                    <a href="#">会社概要</a>
-                    <a href="#">お問い合わせ</a>
-                    <a href="#">
-                    <i class="fab fa-facebook-square"></i>
+                <div class="product-item col-lg-3 col-6 d-flex align-items-center p-0 mb-3"
+                    style="background-color: #fff;">
+                    <a href="#" class="arrow">商品一覧はこちら
                     </a>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="top-link d-flex d-flex flex-column-reverse align-items-end pb-5 mr-5">
+        <a href="#">
+            <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/icon-arrow2.png" alt="">
+        </a>
+    </div>
+    <div class="container-footer">
+        <div id="row footer ">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <a href="#">
+                        <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/footer-logo.png"
+                            alt="" width:="73" height="98">
+                    </a>
+                </div>
+                <div class="address">
+                    <p>つるの玉子本舗<br />〒700-0827<br />岡山県岡山市北区平和町 2-1<br />TEL: 086-222-2357</p>
+                </div>
+                <div class="footer-right ">
+                    <a href="#">
+                        <img src="https://tsurutama.jp/wp-content/themes/simplicity2-child/images/bnr-tsurutama.jpg"
+                            alt="">
+                        <span>つるの玉子本舗webサイト</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-copyright">
+        <div class="row copyright justify-content-between ">
+            <div class="footer-copyright col-lg-6 col-sm-1">
+                <p>© TSURUTAMA. All rights reserved.</p>
+            </div>
+            <div class="footer-nav d-flex justify-content-between align-items-center">
+                <a href="#">会社概要</a>
+                <a href="#">お問い合わせ</a>
+                <a href="#">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
-        let images = ["keyvisual-pc01.jpg", "keyvisual-pc02.jpg", "keyvisual-pc03.jpg", "keyvisual-pc04.jpg", "keyvisual-pc05.jpg"];
-    $(function () {
-        let i = 0;
-        $("#dvImage").css("background-image", "url(https://tsurutama.jp/wp-content/themes/simplicity2-child/images/" + images[i] + ")");
-        setInterval(function () {
-            i++;
-            if (i == images.length) {
-                i = 0;
-            }
-            $("#dvImage").fadeOut("slow", function () {
-                $(this).css("background-image", "url(https://tsurutama.jp/wp-content/themes/simplicity2-child/images/" + images[i] + ")");
-                $(this).fadeIn("slow");
-            });
-        }, 1000);
-    });
+        let images = ["keyvisual-pc01.jpg", "keyvisual-pc02.jpg", "keyvisual-pc03.jpg", "keyvisual-pc04.jpg",
+            "keyvisual-pc05.jpg"
+        ];
+        $(function () {
+            let i = 0;
+            setInterval(function () {
+                i = (i + 1) % images.length;
+                $("#banner-background").fadeOut("slow", function () {
+                    $(this).css("background-image",
+                        "url(https://tsurutama.jp/wp-content/themes/simplicity2-child/images/" +
+                        images[i] + ")");
+                    $(this).fadeIn("slow");
+                });
+            }, 3000);
+        });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
