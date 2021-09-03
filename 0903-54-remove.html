@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove</title>
+    <style>
+        /* #removeBtn{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            opacity:0; 
+        } 
+        demo的時候可以藏一個隱形的removeBtn 浮起來不佔高跟寬
+        */
+    </style>
+</head>
+<body>
+    <div id="removeBtn">click</div> 
+    <div class="container">
+        <div class="row">
+            <h1 class="hello helloWorld">Hello World</h1>
+            <h1 class="hello helloWorld">Hello World1</h1>
+            <h1 class="hello helloWorld">Hello World2</h1>
+        </div>
+    </div>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $('#removeBtn').on('click',function(){
+            // console.log('hi');
+            $('.helloWorld1').remove();
+        });
+    </script>
+</body>
+</html>
