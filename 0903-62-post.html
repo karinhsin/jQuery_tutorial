@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>post</title>
+  </head>
+  <body>
+    <input type="text" name="name" value="John"/>
+    <input type="text" name="name" value="Boston"/>
+    <button>click</button>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        //cross-origin跨網域的請求
+        //console.log:has been blocked by CORS policy 因為跨網域的政策所以被阻擋了
+        //跨網域請求被阻擋是因為瀏覽器 不是因為伺服器（技術上來說做得到）
+        //http://localhost:5500/0903-62-post.html
+
+
+        //非同步
+        $.ajax({
+            method: "POST",  //用什麼方法傳（寄信方式）
+            //post 有封起來 郵差看不到內容 只有傳的人跟收的人會知道 比較安全 密碼比較適合用post傳遞 
+
+            //get 內容會秀在外面 郵差看得到內容 像明信片一樣 成本低的東西就用get傳遞
+            
+            url: "http://localhost/php2/echoData.php", //傳到哪（地址）
+            data: { name: "John", location: "Boston" }
+            //傳的內容
+            //key(name) value(John) 中間用逗號隔開
+            }).done(function( msg ) {
+            //done：非同步的概念
+            //不知道什麼時候會回信 但回信了會通知你
+            alert(msg);
+         });
+    </script>
+  </body>
+</html>
